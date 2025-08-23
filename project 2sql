@@ -1,0 +1,111 @@
+select * from [dbo].[Customers]
+select * from [dbo].[OrderDetails]
+select * from [dbo].[Orders]
+select * from [dbo].[Products]
+--1. Liệt kê các khách hàng ở HN
+select * from [dbo].[Customers]
+where city='Hanoi'
+
+--2.Top 10 sp có giá cao nhất
+select top 10 * from [dbo].[Products]
+order by unit_price desc
+
+-- 3.Liệt kê các đơn hàng tháng 07/2021
+select * from [dbo].[Orders]
+where order_date>='2021-07-01'
+and order_date<'2021-08-01'
+
+--4.Tổng doanh thu của công ty 
+select sum([dbo].[OrderDetails].quantity*[dbo].[Products].unit_price)
+from [dbo].[OrderDetails] 
+join [dbo].[Products] on [dbo].[OrderDetails].product_id = [dbo].[Products].product_id
+
+--5.Tính doanh thu theo từng tháng
+select 
+year (order_date ),
+month(order_date),
+sum([dbo].[OrderDetails].quantity*[dbo].[Products].unit_price)
+from [dbo].[OrderDetails]
+join [dbo].[Orders] on [dbo].[OrderDetails].order_id=[dbo].[Orders].order_id
+join [dbo].[Products] on [dbo].[OrderDetails].product_id=[dbo].[Products].product_id
+group by year (order_date ),month(order_date)
+order by year (order_date ),month(order_date)
+
+--6.Tính doanh thu theo từng loại sp
+select [dbo].[Products].category,
+sum([dbo].[Products].unit_price*[dbo].[OrderDetails].quantity)
+from [dbo].[Products]
+join [dbo].[OrderDetails] on [dbo].[OrderDetails].product_id=[dbo].[Products].product_id
+group by category
+
+--7.Số đơn hàng trung bình mỗi khách hàng
+select 
+AVG(ordercount)
+from(
+    select customer_id,
+    count(order_id) as ordercount
+    from [dbo].[Orders]
+    group by customer_id
+) as Customer_order
+
+--8.Liệt kê tên khách hàng và sản phẩm họ đã mua
+select distinct 
+firstname,
+lastname,
+product_name
+from [dbo].[Customers]
+join [dbo].[Orders] on [dbo].[Orders].customer_id=[dbo].[Customers].CustomerID
+join [dbo].[Products] on [dbo].[Products].product_id=[dbo].[Products].product_id
+join [dbo].[OrderDetails] on [dbo].[Orders].order_id=[dbo].[OrderDetails].order_id
+
+--9.Liệt kê các đơn hàng chưa giao 
+select product_name
+from [dbo].[Products]
+join [dbo].[OrderDetails] on [dbo].[Products].product_id=[dbo].[OrderDetails].product_id
+join [dbo].[Orders] on [dbo].[Orders].order_id=[dbo].[OrderDetails].order_id
+where [dbo].[Orders].[status]='Pending'
+
+--10.Tìm top 10 khách hàng có nhiều đơn hàng nhất
+select top 10
+customerID,
+FirstName,
+lastname,
+count([dbo].[Orders].order_id) as TotalOrder
+from [dbo].[Customers]
+join [dbo].[Orders] on [dbo].[Customers].CustomerID=[dbo].[Orders].[customer_id]
+join [dbo].[OrderDetails] on [dbo].[OrderDetails].order_id=[dbo].[Orders].[order_id]
+group by [dbo].[Customers].CustomerID, firstname,LastName
+order by TotalOrder DESC
+
+--11.Top 5 khách hàng có chi tiêu cao nhất
+select top 5
+customerId,
+FirstName,
+lastname,
+sum([dbo].[OrderDetails].quantity * [dbo].[Products].unit_price) as Sumtop
+from [dbo].[Customers]
+join [dbo].[Orders] on [dbo].[Customers].CustomerID=[dbo].[Orders].customer_id
+join [dbo].[OrderDetails] on [dbo].[OrderDetails].order_id=[dbo].[Orders].[order_id]
+join [dbo].[Products] on [dbo].[Products].product_id=[dbo].[OrderDetails].product_id
+group by customerId,firstname,LastName
+order by Sumtop desc
+
+--12.Tìm sp bán chạy nhất trong quý II(tháng4-6) năm 2021
+select 
+product_name,
+sum([dbo].[OrderDetails].quantity) as TotalOrder
+from [dbo].[Products]
+join [dbo].[OrderDetails] on [dbo].[Products].product_id=[dbo].[OrderDetails].product_id
+join [dbo].[Orders] on [dbo].[Orders].order_id=[dbo].[OrderDetails].order_id
+where order_date>='2021-04-01'
+and order_date<'2021-07-01'
+group by product_name
+order by TotalOrder desc
+
+--13. Doanh thu theo từng sản phẩm
+select product_name,
+sum(quantity*unit_price) as TotalRevenue
+from [dbo].[Products]
+join [dbo].[OrderDetails] on [dbo].[Products].product_id=[dbo].[OrderDetails].product_id
+group by product_name
+order by TotalRevenue ASC
