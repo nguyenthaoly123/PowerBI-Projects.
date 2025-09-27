@@ -70,10 +70,8 @@ This project aims to build a Power BI Dashboard (integrated with SQL queries) us
 ## II.Best/Worst Seller
 ![Pizza_sales_chart3](https://github.com/user-attachments/assets/4adb3dbc-98a2-4afb-aee5-8fb96a06ab96)
 
-
-https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sales_chart3.jpg
-
 1.**Best Sellers**
+
 -Revenue: **The Thai Chicken Pizza** generated the highest revenue (43K).
 
 -Quantity: **The Classic Deluxe Pizza** sold the largest quantity (2.5K units).
