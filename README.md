@@ -38,8 +38,8 @@ This project aims to build a Power BI Dashboard (integrated with SQL queries) us
 
 # 📊Key Insights & Visualizations
 ## I. Overview
+![Pizza_sales_chart](https://github.com/user-attachments/assets/72239bb5-58a8-42c1-992e-e530625bf59f)
 
-https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sales_chart.jpg
 
 - Firstly, the total revenue of Pizza sales from (01/2015 -> 12/2015) was **817.86K**:
   + Classic: **~220K** (26.91%)
@@ -68,6 +68,8 @@ https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sale
 -Average pizzas per order: **2.32** → indicating that customers typically purchased multiple pizzas per order.
 
 ## II.Best/Worst Seller
+![Pizza_sales_chart3](https://github.com/user-attachments/assets/4adb3dbc-98a2-4afb-aee5-8fb96a06ab96)
+
 
 https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sales_chart3.jpg
 
