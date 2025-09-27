@@ -107,10 +107,9 @@ This project aims to build a Power BI Dashboard (integrated with SQL queries) us
 
 |WHO               |  Strategy                |  Insight                                                                                        | Recommendation          |
 |------------------|--------------------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------
-| Marketing Team   |1.🍕Product Portfolio     |**Brie Carre Pizza** consistently underperforms in revenue, orders, and quantity.               | -Short term: Implement promotional campaigns (bundles/discounts)                                                                                                                                                       to increase sales. Improve quality
-                                                                                                                                                  -Long term: Rebrand or remove this item from the menu.
-| Sales Team       |2.📈Premium Positioning   |**Thai Chicken Pizza** generates the highest revenue but doesn’t lead in volume.                 |
-| Operations Team  |3.⚙️Menu Optimization     |**Classic, Barbeque, Hawaiian, and Pepperoni pizzas** show stable, consistent performance.       |
+| Marketing Team   |1.🍕Product Portfolio     |**Brie Carre Pizza** consistently underperforms in revenue, orders, and quantity.               | -Short term: Implement promotional campaigns (bundles/discounts) to increase sales. Improve quality<br> -Long term: Rebrand or remove this item from the menu.
+| Sales Team       |2.📈Premium Positioning   |**Thai Chicken Pizza** generates the highest revenue but doesn’t lead in volume.                 |-Introduce smaller/cheaper sizes to increase accessibility <br> -Position as a premium product with targeted upselling during high seasons.
+| Operations Team  |3.⚙️Menu Optimization     |**Classic, Barbeque, Hawaiian, and Pepperoni pizzas** show stable, consistent performance.       |-Keep them as main menu items, maintain quality, distinctive flavor<br> -Highlight in promotions as “customer favorites” and use them in combo deals to attract higher order values.
 
 
 
