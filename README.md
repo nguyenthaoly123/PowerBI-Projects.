@@ -39,6 +39,8 @@ This project aims to build a Power BI Dashboard (integrated with SQL queries) us
 # 📊Key Insights & Visualizations
 ## I. Overview
 
+https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sales_chart.jpg
+
 - Firstly, the total revenue of Pizza sales from (01/2015 -> 12/2015) was **817.86K**:
   + Classic: **~220K** (26.91%)
   + Supreme: **~208.2K** (25.46%)
