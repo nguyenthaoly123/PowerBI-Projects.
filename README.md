@@ -69,6 +69,8 @@ https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sale
 
 ## II.Best/Worst Seller
 
+https://github.com/nguyenthaoly123/PowerBI-Projects./blob/main/images/Pizza_sales_chart3.jpg
+
 1.**Best Sellers**
 -Revenue: **The Thai Chicken Pizza** generated the highest revenue (43K).
 
